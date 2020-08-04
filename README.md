@@ -3,6 +3,7 @@
 You need to use every method with tblua:METHOD.
 Make sure the import is written in the 1 line.
 Read the important methods like RegisterTemTemWindow() and GetAreaColor() before you interact with scripts that needs that the variables are set inside of the Framework.
+VirtualKeyCode list: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 Boolean IsInFight()
     
@@ -45,19 +46,18 @@ Boolean CheckLuma()
     
     returns true when luma is found | false when not
 
-void PressKey(VirtualKeyCode key)
-    
-    Needs a valid VirtualKeyCode to work, for normal keys use the VK_ before like VK_F, for other keys like arrows just use as an example ESCAPE, LEFT, UP
-    It will press the key 1 time
-    
-void KeyUp(VirtualKeyCode key)
-    
-    Needs a valid VirtualKeyCode to work, for normal keys use the VK_ before like VK_F, for other keys like arrows just use as an example ESCAPE, LEFT, UP
-    It will release the key, when key is not pressed nothing happens
+void PressKey(int key)
 
-void KeyDown(VirtualKeyCode key)
+    Press Key 1 time, needs a valid VirtualKeyCode in integer to work
     
-    Needs a valid VirtualKeyCode to work, for normal keys use the VK_ before like VK_F, for other keys like arrows just use as an example ESCAPE, LEFT, UP
+void KeyUp(int key)
+
+    Release Key, needs a valid VirtualKeyCode in integer to work
+    It will release the key, when key is not pressed nothing happens
+    
+void KeyDown(int key)
+
+    Hold Key, needs a valid VirtualKeyCode in integer to work
     It will press the key down till KeyDown() is called with the same key
     
 void RandomArea()
@@ -97,10 +97,6 @@ void AreaTopDown()
 void CircleArea()
     
     Starts the CircleArea movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
-
-Boolean IsKeyPressed(VirtualKeyCode key)
-    
-    returns true when key is pressed | false when not
 
 void TestMessage(String message)
     
