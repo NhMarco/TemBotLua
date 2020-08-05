@@ -62,15 +62,11 @@ void KeyDown(int key)
     
 void RandomArea()
     
-    Starts the Random movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
+    Starts the Random movement, it only proceeds till a movement change is done, need to be called in a while to be a real movement
 
-void PauseMovement()
+void StopMovement()
     
-    Pauses the Area Detection threads, this doesnt stop Movements that are running
-
-void ResumeMovement()
-    
-    Resume the Area Detection threads
+    Stop the Area Detection threads, you can restart them with calling a movement
 
 Boolean GetMovementState()
     
@@ -78,25 +74,25 @@ Boolean GetMovementState()
 
 void DelayTopDown()
     
-    Starts the DelayTopDown movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
-    This movement doesnt start the Area Detection threads, Pause/Resume movement doesnt do anything here
+    Starts the DelayTopDown movement, need to be called in a while to be a real movement
+    This movement doesnt start the Area Detection threads, StopMovement doesnt do anything here
 
 void DelayLeftRight()
     
-    Starts the DelayLeftRightmovement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
-    This movement doesnt start the Area Detection threads, Pause/Resume movement doesnt do anything here
+    Starts the DelayLeftRight movement, need to be called in a while to be a real movement
+    This movement doesnt start the Area Detection threads, StopMovement doesnt do anything here
 
 void AreaLeftRight()
     
-    Starts the AreaLeftRight movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
+    Starts the AreaLeftRight movement, need to be called in a while to be a real movement
 
 void AreaTopDown()
     
-    Starts the AreaTopDown movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
+    Starts the AreaTopDown movement, need to be called in a while to be a real movement
 
 void CircleArea()
     
-    Starts the CircleArea movement, need to be called after fights ends again, this loop will repeat till minimap is not visible anymore
+    Starts the CircleArea movement, need to be called in a while to be a real movement
 
 void TestMessage(String message)
     
@@ -119,3 +115,11 @@ void Sleep(int sleep)
 void SendTelegramMessage(String message)
       
     sends a telegram message to the notification id in tembot
+    
+void CheckPause()
+
+    checks pause and pausetime from TemBot, when timer is reached it will pause
+    
+void CheckLogout()
+
+    checks logout from TemBot, when timer is reached it will logout
