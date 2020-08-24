@@ -26,21 +26,13 @@ String GetAreaColor()
     returns ColorCode (0xFFFFFF) from the color where the bot tries to walk for area detection
     Need to be called first before calling Movement methods!
     
-void Catch()
+void Catch(int target)
     
-    IsInFight() needs to be true, otherwise it will stuck, starts attacking with both tems
+    IsInFight() needs to be true, target 0 = left | 1 = right
 
-void Attack()
+void Attack(int target, string movekey)
     
-    IsInFight() needs to be true, otherwise it will stuck, starts attacking with both tems
-
-void CatchSwitch()
-    
-    IsInFight() needs to be true, otherwise it will stuck, starts catching left and right tem
-
-void AttackSwitch()
-    
-    IsInFight() needs to be true, otherwise it will stuck, starts attacking left and right tem
+    IsInFight() needs to be true, otherwise it will stuck, target 0 = left | 1 = right. Movekey needs to be a valid virtualkey
 
 Boolean CheckLuma()
     
@@ -59,6 +51,14 @@ void KeyDown(int key)
 
     Hold Key, needs a valid VirtualKeyCode in integer to work
     It will press the key down till KeyDown() is called with the same key
+    
+void ActivateCurveMovement()
+    
+    Activates the curve mode on the area detection
+
+void DeactivateCurveMovement()
+
+    Deactivates the curve mode on the area detection
     
 void RandomArea()
     
@@ -123,3 +123,76 @@ void CheckPause()
 void CheckLogout()
 
     checks logout from TemBot, when timer is reached it will logout
+    
+int GetSleepTime()
+
+    returns SleepTime
+
+int GetRebuy()
+        
+    returns rebuy
+        
+int GetMovementDelay()
+        
+    returns movementdelay
+        
+int GetPause()
+        
+    return pause
+        
+int GetPauseTime()
+        
+    returns pausetime
+        
+int GetLogout()
+        
+    returns logout
+        
+int GetTickrate()
+        
+    returns tickrate
+        
+int GetCurve()
+        
+    returns curverate text
+        
+int GetCurverate()
+        
+    returns actual curverate
+        
+int GetFirstLeftAttackMove()
+        
+    returns First Round Left Tems move
+        
+int GetFirstRightAttackMove()
+        
+    returns First Round Right Tems move
+        
+int GetSecondLeftAttackMove()
+        
+    returns Second Round Left Tems move
+        
+int GetSecondRightAttackMove()
+        
+    returs Second Round Right Tems move
+        
+int GetFirstLeftAttackTarget()
+        
+    returns First Round Left Tems target
+        
+int GetFirstRightAttackTarget()
+        
+    returns First Round Right Tems target
+        
+int GetSecondLeftAttackTarget()
+        
+    returns Second Round Left Tems target
+        
+int GetSecondRightAttackTarget()
+        
+    returns Second Round Right Tems target
+        
+void AttackSequence(int turn)
+        
+    Attack with both tems with the attack settings on TemBot
+        
