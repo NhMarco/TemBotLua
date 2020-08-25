@@ -51,15 +51,11 @@ void KeyDown(int key)
 
     Hold Key, needs a valid VirtualKeyCode in integer to work
     It will press the key down till KeyDown() is called with the same key
-    
-void ActivateCurveMovement()
-    
-    Activates the curve mode on the area detection
 
-void DeactivateCurveMovement()
+void RandomAreaCurved()
 
-    Deactivates the curve mode on the area detection
-    
+    Starts the Random curve movement, it only proceeds till a movement change is done, need to be called in a while to be a real movement
+
 void RandomArea()
     
     Starts the Random movement, it only proceeds till a movement change is done, need to be called in a while to be a real movement
